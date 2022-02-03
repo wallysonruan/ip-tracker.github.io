@@ -136,12 +136,15 @@ body{
 	#content-container{
         	width: 80%;
 	}
-	.search-bar__container{
-		width: 50%;
+		.search-bar__container{
+			width: 50%;
+		}
+        	#results-container{
+			flex-direction: row;
+			align-items: center;
+			height: 10ch;
+		}
+			.result{
+				text-align: left;
+			}
 	}
-        #results-container{
-		flex-direction: row;
-		align-items: center;
-		height: 10ch;
-	}
-}
