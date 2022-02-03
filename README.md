@@ -1,5 +1,5 @@
 # IP Tracker Web APP
-A Frontend Mentor which has an API consuming challenge. I'm quite excited to solve it because I've not dealt with APIs before.
+A Frontend Mentor challenge which has an API consuming challenge. I'm quite excited to solve it because I've not dealt with APIs before.
 
 ## First Impressions
 The layout is simple, the API consuming part that is the complicated one.
