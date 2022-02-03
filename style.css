@@ -70,19 +70,22 @@ body{
             #search-bar{
                 cursor: pointer;
                 display: flex;
-                justify-content: center;
+                justify-content: right;
                 align-items: center;
-                width: 80%;
+                width: 85%;
                 height: 100%;
                 text-align: left;
             }
             #search-bar__input{
-                width: 80%;
+                width: 95%;
                 height: 100%;
                 font-size: 1.3rem;
             }
+                #search-bar__input::placeholder{
+                    font-size: 1rem;
+                }
             #search-bar__button{
-                width: 20%;
+                width: 15%;
                 height: 100%;
                 background-color: black;
                 background-image: url("images/icon-arrow.svg");
