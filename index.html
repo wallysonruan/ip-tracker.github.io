@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+<link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+<div id="top-bar"></div> <!--top bar-->
+<!---->
+<div id="bottom-bar"></div>
+<!---->
+<div id="content-container">
+  <h1>
+    IP Address Tracker
+  </h1>
+  <!---->
+  <div class="search-bar__container">
+    <label id="search-bar">
+      <input type="text" id="search-bar__input" maxlength="15">
+    </label>
+    <button type="submit" id="search-bar__button"><!--CSS POWERED--></button>
+  </div> <!--Search bar container-->
+  <div id="results-container">
+    <div class="result">
+      <p class="result__title">
+        IP Address
+      </p>
+      <p class="result__answer">
+        192.212.174.101
+      </p>
+    </div> <!-- container-->
+    <div class="result">
+      <p class="result__title">
+        Location
+      </p>
+      <p class="result__answer">
+        Brooklyn, NY 10001
+      </p>
+    </div> <!--LOCATION container-->
+    <div class="result">
+      <p class="result__title">
+        Timezone
+      </p>
+      <p class="result__answer">
+        UTC -05:00
+      </p>
+    </div> <!--TIMEZONE container-->
+    <div class="result">
+      <p class="result__title">
+        ISP
+      </p>
+      <p class="result__answer">
+        SpaceX Starlink
+      </p>
+    </div> <!--ISP container-->
+  </div> <!--Results container-->
+</div> <!--Content container-->
+</body>
+</html>
