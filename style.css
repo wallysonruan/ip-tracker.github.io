@@ -4,7 +4,6 @@
     ---result-and-input: hsl(0, 0%, 17%);
     ---result-titles: hsl(0, 0%, 59%);
 }
-
 /*RESET*/
 *{
     box-sizing: border-box;
@@ -21,38 +20,31 @@
     margin: 0;
     padding: 0;
 }
-input, button{
-    all: unset;
-}
 
 /**/
 body{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    font-family: 'Rubik', sans-serif;
+    font-family: "Rubik";
 }
-#top-bar{
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
-    height: 35%;
-    background-image: url("images/pattern-bg.png");
+    height: 40%;
+    padding-top: 2rem;
+    /**/
+    background-image: url(images/pattern-bg.png);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
 }
-    #content-container{
-        position: fixed;
-        top: 10%;
-        left: 50%;
-        transform: translate(-50%, -10%);
-        /**/    
+    .search-container__content-container{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-	align-items: center;
-        /**/
-        gap: 30px;
-        width: 90%;
-        height: max-content;
+        width: 85%;
+        gap: 1.5rem;
         /**/
         text-align: center;
     }
@@ -60,91 +52,68 @@ body{
             color: white;
             font-weight: 500;
         }
-        .search-bar__container{
+
+        .search-bar{
             display: flex;
             width: 100%;
-            height: 5ch;
-            border-radius: 15px;
+            height: 4rem;
             overflow: hidden;
-            background-color: white;
+            /**/
+            border-radius: 15px;
         }
-            #search-bar{
-                cursor: pointer;
-                display: flex;
-                justify-content: right;
-                align-items: center;
-                width: 85%;
-                height: 100%;
-                text-align: left;
-            }
             #search-bar__input{
-                width: 95%;
+                width: 80%;
                 height: 100%;
-                font-size: 1.3rem;
+                padding-left: 10px;
+                cursor: pointer;
+                /**/
+                font-size: 1.5rem;
             }
                 #search-bar__input::placeholder{
-                    font-size: 1rem;
+                    font-size: medium;
                 }
-            #search-bar__button{
-                width: 15%;
+            #search-bar__bttn{
+                width: 20%;
                 height: 100%;
+                cursor: pointer;
+                /**/
                 background-color: black;
-                background-image: url("images/icon-arrow.svg");
+                background-image: url(images/icon-arrow.svg);
                 background-repeat: no-repeat;
                 background-position: center;
             }
-                #search-bar__button:hover{
-                    cursor: pointer;
-                    opacity: 70%;
+                button{
+                    all: unset;
                 }
-        #results-container{
+    .result{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: max-content;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 15px;
+        /**/
+        background-color: white;
+    }
+        li{
+            list-style: none;
+        }
+        .result__container{
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            /**/
-            width: 100%;
-            height: max-content;
-            padding: 10px;
-            border-radius: 15px;   
-            background-color: white;
-            text-align: center;
+            gap: 0.5rem;
         }
-            .result{
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                height: 5ch;
-            }
             .result__title{
                 color: var(---result-titles);
-                font-size: 0.7rem;
             }
-            .result__answer{
-                font-size: 1.2rem;
-                color: var(---result-and-input);
-                font-weight: 500;
+            .result__data{
+                font-weight: 700;
+                font-size: 1.3rem;
             }
-#bottom-bar{
-    background-color: yellow;
+
+.map-container{
+    background-color: gray;
     width: 100%;
-    height: 65%;
+    height: 70%;
 }
-
-/*--------------------------------------------------------------*/
-
-@media screen and (min-width: 600px){
-	#content-container{
-        	width: 80%;
-	}
-		.search-bar__container{
-			width: 50%;
-		}
-        	#results-container{
-			flex-direction: row;
-			align-items: center;
-			height: 10ch;
-		}
-			.result{
-				text-align: left;
-			}
-	}
