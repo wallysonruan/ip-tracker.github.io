@@ -20,10 +20,12 @@
     <div class="search-container__content-container">
         <h1>IP Adress Tracker</h1>
 
-        <div class="search-bar">
-            <input type="text" id="search-bar__input" maxlength="15" placeholder="Search for any ip adress or domain">
-            <!---->
-            <button id="search-bar__bttn"><!--CSS--></button>
+        <div class="search-bar__container">
+            <div class="search-bar">
+                <input type="text" id="search-bar__input" maxlength="15" placeholder="Search for any ip adress or domain">
+                <!---->
+                <button id="search-bar__bttn"><!--CSS--></button>
+            </div>
         </div>
 
         <ul class="result">
@@ -31,7 +33,7 @@
                 <small class="result__title">
                     IP ADRESS
                 </small>
-                <p class="result__data">
+                <p class="result__data" id="ip">
                     192.212.174.101
                 </p>
             </li>
@@ -40,7 +42,7 @@
                 <small class="result__title">
                     LOCATION
                 </small>
-                <p class="result__data">
+                <p class="result__data" id="location">
                     Brooklyn, NY 10001
                 </p>
             </li>
@@ -49,8 +51,8 @@
                 <small class="result__title">
                     TIMEZONE
                 </small>
-                <p class="result__data">
-                    UTC -05:00
+                <p class="result__data" >
+                    UTC <span id="timezone">-05:00</span>
                 </p>
             </li>
 
@@ -58,7 +60,7 @@
                 <small class="result__title">
                     ISP
                 </small>
-                <p class="result__data">
+                <p class="result__data" id="isp">
                     SpaceX Starlink
                 </p>
             </li>
