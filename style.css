@@ -28,6 +28,7 @@ body{
     font-family: "Rubik";
 }
 .search-container{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -41,6 +42,7 @@ body{
     background-position: center;
 }
     .search-container__content-container{
+        position: absolute;
         display: flex;
         flex-direction: column;
         width: 85%;
@@ -117,3 +119,7 @@ body{
     width: 100%;
     height: 70%;
 }
+    #map{
+        width: 100%;
+        height: 100%;
+    }
