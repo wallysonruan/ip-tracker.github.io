@@ -133,3 +133,30 @@ body{
         height: 100%;
         display: none;
     }
+
+@media screen and (max-height: 375px) {
+    h1{
+        font-size: 1.5rem;
+    }
+    .search-bar{
+        height: 3rem;
+    }
+        #search-bar__input{
+            font-size: 1rem;
+        }
+    .result{
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+        .result__container{
+            justify-content: center;
+            width: 30%;
+        }
+            .result__title{
+                font-size: 0.5rem;
+            }
+            .result__data{
+                font-size: 0.9rem;
+            }
+}
