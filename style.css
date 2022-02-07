@@ -130,7 +130,7 @@ body{
     display: none;
 }
 
-@media screen and (max-height: 375px) {
+@media screen and (max-height: 380px) {
     h1{
         font-size: 1.5rem;
     }
