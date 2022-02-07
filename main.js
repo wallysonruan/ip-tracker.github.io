@@ -1,8 +1,6 @@
 const input = document.getElementById("search-bar__input"),
 bttn = document.getElementById("search-bar__bttn");
 
-
-//I plan to substitute the entire functions below for a RegEx validation
 const numberOrDotOnly = () => {
     let ipAdress = input.value,
     ipAdressLastChar = input.value.charAt(input.value.length - 1);
@@ -18,33 +16,35 @@ const numberOrDotOnly = () => {
         }
     }
 }
-const validateIpAdress = () => {
+const IpValidation = () => {
     let ipAdress = input.value,
-    firstThree, secondThree, thirdThree, fourthThree;
-
-    if(ipAdress.length == 15){
-        firstThree = ipAdress.slice(0,3),
-        secondThree = ipAdress.slice(4,7),
-        thirdThree = ipAdress.slice(8,11),
-        fourthThree = ipAdress.slice(12,15);
-    }else{
-        firstThree = ipAdress.slice(0,3),
-        secondThree = ipAdress.slice(3,6),
-        thirdThree = ipAdress.slice(6,9),
-        fourthThree = ipAdress.slice(9,12);
+    dots = [],
+    otherChar = [];
+    
+    for(let i = 0; i < ipAdress.length; i++){
+        if(ipAdress[i] == "."){
+            dots += ipAdress[i];
+        }
+        else{
+            otherChar += ipAdress[i];
+        }
     }
-
-    ipAdress = firstThree + "." + secondThree + "." + thirdThree + "." + fourthThree;
-
-    return ipAdress
+    
+    if(dots.length == 3 && otherChar.length >= 4){
+        return ipAdress
+    }
+    else{
+        window.alert("The IP must contain 4 groups of number separated by dots, each ranging from 1 to 3 numbers.\n\nExample: 000.111.222.333")
+    }
 }
 const searchIpAdress = (ip) =>{
     fetch(`https://geo.ipify.org/api/v1?apiKey=at_Vd9V7RfXcNnnNbl69el94S51ORuj1&ipAddress=${ip}`)
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data)
-        showIpAdress(data);
-    })
+    .then((response) => response.json()
+        .then((data) => {
+        if(data.code != 422){
+            showIpAdress(data);
+        }
+    }))
 }
 const showIpAdress = (data) =>{
     document.getElementById("ip").innerHTML = data.ip;
@@ -60,7 +60,7 @@ input.addEventListener("input", go => {
     numberOrDotOnly();
 })
 bttn.addEventListener("click", go => {
-    searchIpAdress(validateIpAdress());
+    searchIpAdress(IpValidation());
 });
 
 const personalToken = "pk.eyJ1Ijoid2FsbHlzb25ydWFuIiwiYSI6ImNremFsdjduejI1aTcycHIxd2d4MG9zeG8ifQ.ARlUGYo0jle4wk8WPtgbQw";
