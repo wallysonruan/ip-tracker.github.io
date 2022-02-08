@@ -11,7 +11,17 @@ I was watching a youtube video about how to consume an API with vanilla Javascri
 
 ### Layout
 
-At first sight I thought the layout were the easiest part of this project, so simple. Little did I know... The Leaflet map were programmed to be on top of everything and, to this day (02/07/2022), I haven't figured out how to change that – I decided to study and solve this problem after everything is done.
+(07/02/22, afternoon) At first sight I thought the layout were the easiest part of this project, so simple. Little did I know... The Leaflet map were programmed to be on top of everything and, to this day, I haven't figured out how to change that – I decided to study and solve this problem after everything is done.
+
+(07/02/22, night) After trying to put the map on layer bellow with everything I knew, I submitted my unfinished solution to the Frontend Mentor and peeked over the other solutions. One of the solutions attracted me for the dev had successfully solved my problem. I skimmed his code, his website and made a few suggestions, as well as asked for a tip and/or the answer to how I'd solve my problem. He kindly gave me the answer by commenting my solution.
+
+`z-index` is the solution.
+
+I googled it up and found a well explained article by [Alura](https://www.alura.com.br/artigos/z-index-utilizar-essa-propriedade-css?gclid=CjwKCAiAo4OQBhBBEiwA5KWu_9Xp-xS3NK_JAKQD_DCX0jHGxzpbLMnkD-tGYSfPR43ikzTWAbbCtxoCUusQAvD_BwE) and tried to use the property. It worked! But... I've set the z-index of the result container to *1* and the one of the map to *-1* and thought that would be it. Wrong. Setting the z-index of the map to *-1* indeed put it a layer bellow, but also took it's interactiveness away. I googled the z-index again, hopping to find some rules that would explain that, but found nothing. Along the research I read that *0* was an acceptable number too, I tried that and... It worked! But why? After some research I came to the conclusion that:
+   1. *-1* puts the element in the lowest layer, preventing it of any kind of interaction with the user;
+   2. The "0" and "auto" are different in this project. It seems that if I set the z-index of the map to *auto* the original value will prevail, which caused the initial problem, and setting it to *0* reset the z-index and override the map original code – in other projects both values should mean the exactly same thing.
+
+
 
 Even with the map problem, thanks to the BEM CSS class naming methodology, the stylesheet of this project was easy to deal, so I'm going to keep using BEM and improving my understanding and use of it to keep enjoying it's benefits.
 
