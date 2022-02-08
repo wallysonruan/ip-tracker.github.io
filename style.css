@@ -129,7 +129,7 @@ body{
     height: 70%;
 }
    #map{
-   z-index: -1;
+   z-index: 0;
 }
 
 @media screen and (max-height: 380px) {
