@@ -33,9 +33,6 @@ const IpValidation = () => {
     if(dots.length == 3 && otherChar.length >= 4){
         return ipAdress
     }
-    else{
-        window.alert("The IP must contain 4 groups of number separated by dots, each ranging from 1 to 3 numbers.\n\nExample: 000.111.222.333")
-    }
 }
 const searchIpAdress = (ip) =>{
     fetch(`https://geo.ipify.org/api/v1?apiKey=at_Vd9V7RfXcNnnNbl69el94S51ORuj1&ipAddress=${ip}`)
@@ -43,6 +40,10 @@ const searchIpAdress = (ip) =>{
         .then((data) => {
         if(data.code != 422){
             showIpAdress(data);
+        }
+        else{
+            window.alert("The IP must contain 4 groups of number separated by dots, each ranging from 1 to 3 numbers.\n\nExample: 000.111.222.333");
+            input.value = "";
         }
     }))
 }
@@ -65,7 +66,10 @@ bttn.addEventListener("click", go => {
 
 const personalToken = "pk.eyJ1Ijoid2FsbHlzb25ydWFuIiwiYSI6ImNremFsdjduejI1aTcycHIxd2d4MG9zeG8ifQ.ARlUGYo0jle4wk8WPtgbQw";
 //Set the location position to be shown on the map
-let map = L.map('map').setView([37.38605, -122.08385], 13);
+let latitude = 37.38655,
+    longitude = 122.08385;
+
+let map = L.map('map').setView([latitude, -longitude], 13);
 
     //Create the map
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -84,4 +88,4 @@ let marker = L.icon({
     iconAnchor: [22,94]
 })
     //Set the marker position
-    L.marker([37.38605, -122.08385], {icon: marker}).addTo(map);
+    L.marker([latitude, -longitude], {icon: marker}).addTo(map);
